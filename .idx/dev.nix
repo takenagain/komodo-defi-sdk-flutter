@@ -2,7 +2,7 @@
 # see: https://developers.google.com/idx/guides/customize-idx-env
 { pkgs, ... }: {
   # Which nixpkgs channel to use.
-  channel = "stable-23.11"; # or "unstable"
+  channel = "unstable"; # or "unstable"
 
   # Use https://search.nixos.org/packages to find packages
   packages = [
@@ -21,14 +21,17 @@
       "Dart-Code.flutter"
       "Dart-Code.dart-code"
       "mhutchie.git-graph"
-      
     ];
     workspace = {
       # Runs when a workspace is first created with this `dev.nix` file
       onCreate = {
+        upgradeFlutter = ''
+            flutter channel stable
+            flutter upgrade
+        '';
         installDependencies = "flutter pub get";
         build-flutter = ''
-          cd /home/user/myapp
+          cd ~/komodo-defi-sdk-flutter
 
           # TODO: Execute web build in debug mode.
           # flutter run does this transparently either way
@@ -42,7 +45,7 @@
         gitFetch = "git fetch --all";
         installDependencies = "flutter pub get";
         flutterAnalyze = "flutter analyze"; 
-      }
+      };
     };
 
     # Enable previews and customize configuration
@@ -50,6 +53,7 @@
       enable = true;
       previews = {
         web = {
+          cwd = "example";
           command = ["flutter" "run" "--machine" "-d" "web-server" "--web-hostname" "0.0.0.0" "--web-port" "$PORT"];
           manager = "flutter";
         };
