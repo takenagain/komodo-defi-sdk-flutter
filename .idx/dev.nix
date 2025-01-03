@@ -2,7 +2,7 @@
 # see: https://developers.google.com/idx/guides/customize-idx-env
 { pkgs, ... }: {
   # Which nixpkgs channel to use.
-  channel = "unstable"; # or "unstable"
+  channel = "stable-24.05"; # or "unstable"
 
   # Use https://search.nixos.org/packages to find packages
   packages = [
@@ -25,10 +25,6 @@
     workspace = {
       # Runs when a workspace is first created with this `dev.nix` file
       onCreate = {
-        upgradeFlutter = ''
-            flutter channel stable
-            flutter upgrade
-        '';
         installDependencies = "flutter pub get";
         build-flutter = ''
           cd ~/komodo-defi-sdk-flutter
