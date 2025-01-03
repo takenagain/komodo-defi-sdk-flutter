@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-import 'package:komodo_defi_framework/komodo_defi_framework.dart' as komodo_defi_framework;
-
 void main() {
   runApp(const MyApp());
 }
@@ -21,8 +19,8 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    sumResult = komodo_defi_framework.sum(1, 2);
-    sumAsyncResult = komodo_defi_framework.sumAsync(3, 4);
+    sumResult = 3;
+    sumAsyncResult = Future.value(20);
   }
 
   @override
