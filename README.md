@@ -2,6 +2,21 @@
 
 A new Flutter FFI plugin project.
 
+<a href="https://idx.google.com/import?url=https://github.com/takenagain/komodo-defi-sdk-flutter.git">
+  <picture>
+    <source
+      media="(prefers-color-scheme: dark)"
+      srcset="https://cdn.idx.dev/btn/open_dark_32.svg">
+    <source
+      media="(prefers-color-scheme: light)"
+      srcset="https://cdn.idx.dev/btn/open_light_32.svg">
+    <img
+      height="32"
+      alt="Open in IDX"
+      src="https://cdn.idx.dev/btn/open_purple_32.svg">
+  </picture>
+</a>
+
 ## Getting Started
 
 This project is a starting point for a Flutter
@@ -89,4 +104,3 @@ For example, see `sumAsync` in `lib/komodo_defi_framework.dart`.
 For help getting started with Flutter, view our
 [online documentation](https://docs.flutter.dev), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
-
